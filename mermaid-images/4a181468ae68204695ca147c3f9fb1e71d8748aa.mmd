@@ -1,0 +1,17 @@
+%% Diagram 2 – Aggregated Timeline
+gantt
+  title Acute Meningitis ICU Protocol – 0 min -> Discharge
+  dateFormat  HH:mm
+  section Immediate
+    Phase 0 (0-15 min)          :done, P0, 00:00, 00:15
+  section Hour 1
+    Phase 1 (15-60 min)         :done, P1, 00:15, 00:45
+  section First 3 h
+    Phase 2 (1-3 h)             :active, P2, 01:00, 02:00
+  section Half-Day
+    Phase 3 (3-12 h)            :P3, 03:00, 09:00
+  section Day 1
+    Phase 4 (12-24 h)           :P4, 12:00, 12:00
+  section Ongoing
+    Phase 5 (Day 2 -> plateau)   :P5, after P4, 48:00
+    Phase 6 (Discharge plan)    :P6, after P5, 120:00
