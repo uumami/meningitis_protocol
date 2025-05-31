@@ -95,7 +95,7 @@ graph TD
 | **4.1** | **Review CSF Gram & cultures**; stop unnecessary drugs.                                        | Antimicrobial stewardship.                            |
 | **4.2** | **Begin probiotic regimen** (*L. rhamnosus GG* 10^10 CFU bid + *S. boulardii* 5 × 10^9 CFU bid). | Cuts antibiotic-associated diarrhea. ([PubMed][12])   |
 | **4.3** | **Oral curcumin 2 g bid** if GI tract functional.                                              | Additional neuro-inflammation control. ([PubMed][13]) |
-| **4.4** | **Repeat Na⁺/Mg^2⁺/phosphate q6 h**; treat hyponatremia aggressively.                           | SIADH common in meningitis. ([PubMed][14])            |
+| **4.4** | **Repeat Na^+/Mg^2+/phosphate q6 h**; treat hyponatremia aggressively.                           | SIADH common in meningitis. ([PubMed][14])            |
 | **4.5** | **Daily early-mobility protocol** (passive ROM -> dangling -> stand).                            | Prevents ICU myopathy.                                |
 
 ```mermaid
@@ -103,7 +103,7 @@ graph TD
     P4[Phase 4<br>12-24 h] -->|4.1| Review(Review CSF Gram & cultures)
     P4 -->|4.2| Pro(Begin probiotic regimen)
     P4 -->|4.3| Cur(Oral curcumin 2 g bid)
-    P4 -->|4.4| Electro(Repeat Na⁺/Mg^2⁺/phosphate q6 h)
+    P4 -->|4.4| Electro(Repeat Na^+/Mg^2+/phosphate q6 h)
     P4 -->|4.5| Mobility(Daily early-mobility protocol)
     style P4 fill:#d8f6ff
 ```
@@ -164,46 +164,67 @@ graph TD
 ```mermaid
 %% Diagram 1 – Phase-by-Phase Tasks
 graph TD
-  P0[Phase 0<br>0-15 min] -->|0.1| Bld(Blood cultures)
-  P0 -->|0.2| CSF(CSF tap & stats)
-  P0 -->|0.3| BioFire(BioFire ME panel)
-  P0 -->|0.4| Dex(Dexamethasone + Empiric Abx)
+    subgraph "Phase 0 (0-15 min)"
+        P0[Phase 0<br>0-15 min]
+        P0 -->|0.1| Bld(Blood cultures)
+        P0 -->|0.2| CSF(CSF tap & stats)
+        P0 -->|0.3| BioFire(BioFire ME panel)
+        P0 -->|0.4| Dex(Dexamethasone + Empiric Abx)
+    end
 
-  P1[Phase 1<br>15-60 min] -->|1.1| Metro(Metronidazole)
-  P1 -->|1.2| Saline(Hypertonic Saline protocol)
-  P1 -->|1.3| Thia(IV Thiamine)
-  P1 -->|1.4| Temp(Mild-fever strategy)
-  P1 -->|1.5| ID(ID consult)
+    subgraph "Phase 1 (15-60 min)"
+        P1[Phase 1<br>15-60 min]
+        P1 -->|1.1| Metro(Metronidazole)
+        P1 -->|1.2| Saline(Hypertonic Saline protocol)
+        P1 -->|1.3| Thia(IV Thiamine)
+        P1 -->|1.4| Temp(Mild-fever strategy)
+        P1 -->|1.5| ID(ID consult)
+    end
 
-  P2[Phase 2<br>1-3 h] -->|2.1| MRI(MRI + MRV)
-  P2 -->|2.2| Lines(Arterial line & neuro-obs)
-  P2 -->|2.3| Labs(Baseline labs)
-  P2 -->|2.4| HRV(HRV biofeedback)
+    subgraph "Phase 2 (1-3 h)"
+        P2[Phase 2<br>1-3 h]
+        P2 -->|2.1| MRI(MRI + MRV)
+        P2 -->|2.2| Lines(Arterial line & neuro-obs)
+        P2 -->|2.3| Labs(Baseline labs)
+        P2 -->|2.4| HRV(HRV biofeedback)
+    end
 
-  P3[Phase 3<br>3-12 h] -->|3.1| Narrow(Narrow Abx)
-  P3 -->|3.2| mNGS(mNGS if BioFire –)
-  P3 -->|3.3| Omega3(IV Omega-3 emulsion)
-  P3 -->|3.4| CoQ(CoQ10 enteral)
-  P3 -->|3.5| Feed(Early feed with fiber)
+    subgraph "Phase 3 (3-12 h)"
+        P3[Phase 3<br>3-12 h]
+        P3 -->|3.1| Narrow(Narrow Abx)
+        P3 -->|3.2| mNGS(mNGS if BioFire –)
+        P3 -->|3.3| Omega3(IV Omega-3 emulsion)
+        P3 -->|3.4| CoQ(CoQ10 enteral)
+        P3 -->|3.5| Feed(Early feed with fiber)
+    end
 
-  P4[Phase 4<br>12-24 h] -->|4.1| Review(Review cultures)
-  P4 -->|4.2| Pro(Probiotics)
-  P4 -->|4.3| Cur(Curcumin)
-  P4 -->|4.4| Electro(Electrolytes q6 h)
-  P4 -->|4.5| Mobility(Mobility protocol)
+    subgraph "Phase 4 (12-24 h)"
+        P4[Phase 4<br>12-24 h]
+        P4 -->|4.1| Review(Review cultures)
+        P4 -->|4.2| Pro(Probiotics)
+        P4 -->|4.3| Cur(Curcumin)
+        P4 -->|4.4| Electro(Electrolytes q6 h)
+        P4 -->|4.5| Mobility(Mobility protocol)
+    end
 
-  P5[Phase 5<br>Day 2 → plateau] --> NeuroEx(AM neuro exam)
-  P5 --> Steward(ID & pharmacy)
-  P5 --> Meta(Metabolic supports)
-  P5 --> Nutri(Nutrition)
-  P5 --> PT(PT escalate)
-  P5 --> Escalate(If decline -> imaging)
+    subgraph "Phase 5 (Day 2 → plateau)"
+        P5[Phase 5<br>Day 2 → plateau]
+        P5 --> NeuroEx(AM neuro exam)
+        P5 --> Steward(ID & pharmacy)
+        P5 --> Meta(Metabolic supports)
+        P5 --> Nutri(Nutrition)
+        P5 --> PT(PT escalate)
+        P5 --> Escalate(If decline -> imaging)
+    end
 
-  P6[Phase 6<br>Discharge] --> Vax(Vaccination)
-  P6 --> Gut(Microbiome rebuild)
-  P6 --> Cog(Neuro-psych testing)
-  P6 --> Supp(Supplements)
-  P6 --> Life(Lifestyle coaching)
+    subgraph "Phase 6 (Discharge)"
+        P6[Phase 6<br>Discharge]
+        P6 --> Vax(Vaccination)
+        P6 --> Gut(Microbiome rebuild)
+        P6 --> Cog(Neuro-psych testing)
+        P6 --> Supp(Supplements)
+        P6 --> Life(Lifestyle coaching)
+    end
 
   style P0 fill:#ffdede
   style P1 fill:#ffe9bf
