@@ -1,0 +1,75 @@
+%% Diagram 1 – Phase-by-Phase Tasks
+graph TD
+    subgraph "Phase 0 (0-15 min)"
+        P0[Phase 0<br>0-15 min]
+        P0 -->|0.1| Bld(Blood cultures)
+        P0 -->|0.2| CSF(CSF tap & stats)
+        P0 -->|0.3| BioFire(BioFire ME panel)
+        P0 -->|0.4| Dex(Dexamethasone + Empiric Abx)
+        P0 -->|0.5| AugP0_AntiCD18(Administer anti-CD18 mAb if GCS ≤12)
+    end
+
+    subgraph "Phase 1 (15-60 min)"
+        P1[Phase 1<br>15-60 min]
+        P1 -->|1.1| Metro(Metronidazole)
+        P1 -->|1.2| Saline(Hypertonic Saline protocol)
+        P1 -->|1.3| Thia(IV Thiamine)
+        P1 -->|1.4| Temp(Mild-fever strategy)
+        P1 -->|1.5| ID(ID consult)
+    end
+
+    subgraph "Phase 2 (1-3 h)"
+        P2[Phase 2<br>1-3 h]
+        P2 -->|2.1| MRI(MRI + MRV)
+        P2 -->|2.2| Lines(Arterial line & neuro-obs)
+        P2 -->|2.3| Labs(Baseline labs)
+        P2 -->|2.4| HRV(HRV biofeedback)
+    end
+
+    subgraph "Phase 3 (3-12 h)"
+        P3[Phase 3<br>3-12 h]
+        P3 -->|3.1| Narrow(Narrow Abx)
+        P3 -->|3.2| mNGS(mNGS if BioFire –)
+        P3 -->|3.3| AugP3_Lipid(Start 20% lipid emulsion EPA/DHA)
+        P3 -->|3.4| CoQ(CoQ10 enteral)
+        P3 -->|3.5| Feed(Early feed with fiber)
+        P3 -->|3.6| AugP3_CRISPR(CRISPR-Cas12a LAMP assay if BioFire –)
+    end
+
+    subgraph "Phase 4 (12-24 h)"
+        P4[Phase 4<br>12-24 h]
+        P4 -->|4.1| Review(Review cultures)
+        P4 -->|4.2| Pro(Probiotics)
+        P4 -->|4.3| Cur(Curcumin)
+        P4 -->|4.4| Electro(Electrolytes q6 h)
+        P4 -->|4.5| Mobility(Mobility protocol)
+        P4 -->|4.6| AugP4_ITAbx(Consider Intrathecal Antibiotics for MDR)
+    end
+
+    subgraph "Phase 5 (Day 2 → plateau)"
+        P5[Phase 5<br>Day 2 → plateau]
+        P5 --> NeuroEx(AM neuro exam)
+        P5 --> Steward(ID & pharmacy)
+        P5 --> Meta(Metabolic supports)
+        P5 --> Nutri(Nutrition)
+        P5 --> PT(PT escalate)
+        P5 --> Escalate(If decline -> imaging)
+        P5 --> AugP5_CSFTest(Daily sTREM-1/MMP-9 CSF testing)
+    end
+
+    subgraph "Phase 6 (Discharge)"
+        P6[Phase 6<br>Discharge]
+        P6 --> Vax(Vaccination)
+        P6 --> Gut(Microbiome rebuild)
+        P6 --> Cog(Neuro-psych testing)
+        P6 --> Supp(Supplements)
+        P6 --> Life(Lifestyle coaching)
+    end
+
+  style P0 fill:#ffdede
+  style P1 fill:#ffe9bf
+  style P2 fill:#fff5b5
+  style P3 fill:#e5ffcc
+  style P4 fill:#d8f6ff
+  style P5 fill:#e0d7ff
+  style P6 fill:#f8d9ff
